@@ -1,4 +1,4 @@
-package com.alert.splashscreen;
+package com.alert.splashscreen.splash;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,10 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import com.alert.splashscreen.R;
+import com.alert.splashscreen.Walkthrough;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity extends AppCompatActivity {
+public class Splash extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +28,10 @@ public class MainActivity extends AppCompatActivity {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                Intent intent=new Intent(MainActivity.this,Walkthrough.class);
+                Intent intent=new Intent(Splash.this, Walkthrough.class);
                 startActivity(intent);
                 finish();
             }
         },3200);
     }
-
-
-
-
 }

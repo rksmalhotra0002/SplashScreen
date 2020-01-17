@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".MainActivity">
+    tools:context=".splash.Splash">
 
    <ImageView
        android:id="@+id/iv_splashimage"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:src="@drawable/downloading"
+       android:contentDescription="@string/app_name"
        android:background="@android:color/white"
        app:layout_constraintTop_toTopOf="parent"
        app:layout_constraintStart_toStartOf="parent"
