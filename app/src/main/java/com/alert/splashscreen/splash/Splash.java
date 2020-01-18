@@ -12,18 +12,26 @@ import com.alert.splashscreen.Walkthrough;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class Splash extends AppCompatActivity {
+
+@BindView(R.id.iv_splashimage)
+ImageView iv_splashimage;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getids(); //calling a method
+        ButterKnife.bind(this);
+        getids();
     }
 
     private void getids()
     {
-        ImageView iv_splashimage=findViewById(R.id.iv_splashimage);
+
         Timer timer=new Timer();
         timer.schedule(new TimerTask() {
             @Override
