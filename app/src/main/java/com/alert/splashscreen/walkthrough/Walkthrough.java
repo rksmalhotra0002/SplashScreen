@@ -1,8 +1,10 @@
-package com.alert.splashscreen;
+package com.alert.splashscreen.walkthrough;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.alert.splashscreen.R;
 
 public class Walkthrough extends AppCompatActivity {
 

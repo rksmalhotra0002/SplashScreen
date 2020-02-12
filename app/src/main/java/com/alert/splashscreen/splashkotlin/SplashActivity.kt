@@ -2,38 +2,48 @@ package com.alert.splashscreen.splashkotlin
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.alert.splashscreen.R
-import com.alert.splashscreen.Walkthrough
+import com.alert.splashscreen.walkthrough.Walkthrough
 import java.util.*
 import kotlin.concurrent.timerTask
 
+
 class SplashActivity : AppCompatActivity() {
+
 @BindView(R.id.iv_splash)
-var iv_splashimage: ImageView? = null
+val iv_splash:ImageView?=null
 
 private lateinit var timer: Timer
-
+private lateinit var decorview:View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        ButterKnife.bind(this)
-       getids()
+       ButterKnife.bind(this)
+
+        setTimerforsplashscreen()
     }
 
-    private fun getids()
+    private fun setTimerforsplashscreen()
     {
+        decorview=window.decorView
+       val uioption=View.SYSTEM_UI_FLAG_FULLSCREEN
+        decorview.systemUiVisibility=uioption
+
+
         timer=Timer()
         timer.schedule(timerTask {
 
-            val intent=Intent(this@SplashActivity,Walkthrough::class.java)
+            val intent=Intent(this@SplashActivity, Walkthrough::class.java)
             startActivity(intent)
             finish()
 
-        },3200)
+        },2500)
     }
 }
+

@@ -7,18 +7,22 @@
     android:background="@android:color/white"
     tools:context=".splashkotlin.SplashActivity">
 
- <ImageView
-     android:id="@+id/iv_splash"
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:src="@drawable/downloading"
-     android:contentDescription="@string/app_name"
-     android:background="@android:color/white"
-     app:layout_constraintTop_toTopOf="parent"
-     app:layout_constraintBottom_toBottomOf="parent"
-     app:layout_constraintStart_toStartOf="parent"
-     app:layout_constraintEnd_toEndOf="parent"
-     />
+
+<ImageView
+    android:id="@+id/iv_splash"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:src="@drawable/downloading"
+    android:contentDescription="@string/app_name"
+    android:background="@android:color/white"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+
+    />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
