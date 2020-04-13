@@ -25,6 +25,7 @@ ImageView iv_image_splash;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         ButterKnife.bind(this);
 
         settimerforsplash();
@@ -48,5 +49,4 @@ ImageView iv_image_splash;
             }
         },2500);
     }
-
 }
