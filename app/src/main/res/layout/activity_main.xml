@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,19 +9,18 @@
     tools:context=".splash.Splash">
 
 <ImageView
-    android:id="@+id/iv_image_splash"
+    android:id="@+id/iv_splash"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:src="@drawable/ic_undraw_android"
-    android:scaleY=".8"
-    android:scaleX=".8"
-    android:background="@android:color/white"
+    android:layout_height="match_parent"
+    android:scaleY=".6"
+    android:scaleX=".6"
     android:contentDescription="@string/app_name"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintVertical_chainStyle="packed"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:src="@drawable/ic_undraw_access_account_99n5"
     />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

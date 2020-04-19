@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".walkthrough.Walkthrough"/>
+
         <activity android:name=".splashkotlin.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,7 +19,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".splash.Splash"/>
+        <activity android:name=".splash.Splash">
+
+        </activity>
     </application>
 
 </manifest>
