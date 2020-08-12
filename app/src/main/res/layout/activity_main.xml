@@ -12,15 +12,15 @@
     android:id="@+id/iv_splash"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scaleY=".6"
-    android:scaleX=".6"
+    android:scaleY=".5"
+    android:scaleX=".5"
     android:contentDescription="@string/app_name"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintVertical_chainStyle="packed"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     android:src="@drawable/ic_undraw_access_account_99n5"
     />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

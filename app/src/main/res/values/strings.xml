@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SplashScreen</string>
+    <string name="welcome_to_android_project">Welcome to Android Project</string>
 </resources>

@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.alert.splashscreen.R;
+import com.alert.splashscreen.databinding.ActivityMainBinding;
 import com.alert.splashscreen.walkthrough.Walkthrough;
 
 import java.util.Timer;
@@ -21,15 +22,16 @@ import butterknife.ButterKnife;
 
 public class Splash extends AppCompatActivity {
 
-@BindView(R.id.iv_splash)
-ImageView iv_splash;
+private ActivityMainBinding activityMainBinding;
+
+private  View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        ButterKnife.bind(this);
+        activityMainBinding=ActivityMainBinding.inflate(getLayoutInflater());
+        view=activityMainBinding.getRoot();
+         setContentView(view);
 
        setAnimation();
 
@@ -39,18 +41,18 @@ ImageView iv_splash;
     {
 
         Animation updown=AnimationUtils.loadAnimation(Splash.this,R.anim.updown);
-        iv_splash.setAnimation(updown);
+        activityMainBinding.ivSplash.setAnimation(updown);
 
-        timerforsplashscreen();
+        timerforSplashScreen();
 
     }
 
-    private void timerforsplashscreen()
+    private void timerforSplashScreen()
     {
-
-        View decorview=getWindow().getDecorView();
+     //fullscreen
+        view=getWindow().getDecorView();
         int uioption=View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorview.setSystemUiVisibility(uioption);
+        view.setSystemUiVisibility(uioption);
 
         Timer timer=new Timer();
         timer.schedule(new TimerTask() {
@@ -64,5 +66,4 @@ ImageView iv_splash;
       }
     },3500);
     }
-
 }

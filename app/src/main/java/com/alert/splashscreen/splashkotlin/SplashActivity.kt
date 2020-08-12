@@ -10,27 +10,25 @@ import androidx.appcompat.app.AppCompatActivity
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.alert.splashscreen.R
+import com.alert.splashscreen.databinding.ActivitySplashBinding
 import com.alert.splashscreen.walkthrough.Walkthrough
 import java.util.*
 import kotlin.concurrent.timerTask
 
 class SplashActivity : AppCompatActivity() {
 
-private lateinit var imageView: ImageView
+private lateinit var activitySplashBinding: ActivitySplashBinding
+
 private lateinit var timer: Timer
+
 private lateinit var decorview:View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+        activitySplashBinding= ActivitySplashBinding.inflate(layoutInflater)
+        decorview=activitySplashBinding.root
+        setContentView(decorview)
 
-        getids()
-
-    }
-
-    private fun getids()
-    {
-        imageView=findViewById(R.id.iv_splashkotlin)
         setAnimation()
 
     }
@@ -39,7 +37,7 @@ private lateinit var decorview:View
     {
 
        val animation = AnimationUtils.loadAnimation(this@SplashActivity, R.anim.downtoup)
-        imageView.animation=animation
+        activitySplashBinding.ivSplashkotlin.animation=animation
 
         settimersplashscreen()
 
@@ -47,8 +45,8 @@ private lateinit var decorview:View
 
     private fun settimersplashscreen()
     {
-
-     decorview=window.decorView
+   //fullscreen
+       decorview=window.decorView
         val uioption=View.SYSTEM_UI_FLAG_FULLSCREEN
         decorview.systemUiVisibility=uioption
 
@@ -57,8 +55,8 @@ private lateinit var decorview:View
 
             val intent=Intent(this@SplashActivity,Walkthrough::class.java)
             startActivity(intent)
+            finish()
 
         },3500)
     }
 }
-
