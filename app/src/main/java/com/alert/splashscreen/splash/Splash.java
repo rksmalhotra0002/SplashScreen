@@ -49,6 +49,7 @@ private  View view;
 
     private void timerforSplashScreen()
     {
+
      //fullscreen
         view=getWindow().getDecorView();
         int uioption=View.SYSTEM_UI_FLAG_FULLSCREEN;

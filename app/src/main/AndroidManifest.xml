@@ -11,18 +11,14 @@
         android:theme="@style/AppTheme">
         <activity android:name=".walkthrough.Walkthrough"/>
 
-        <activity android:name=".splashkotlin.SplashActivity">
+        <activity android:name=".splashkotlin.SplashActivity"/>
 
+        <activity android:name=".splash.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-        </activity>
-
-        <activity android:name=".splash.Splash">
-
 
         </activity>
 

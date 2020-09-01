@@ -15,3 +15,4 @@ public class Walkthrough extends AppCompatActivity {
 
     }
 }
+

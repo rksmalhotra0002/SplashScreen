@@ -35,7 +35,7 @@ private lateinit var decorview:View
 
     private fun setAnimation()
     {
-
+      //Animation
        val animation = AnimationUtils.loadAnimation(this@SplashActivity, R.anim.downtoup)
         activitySplashBinding.ivSplashkotlin.animation=animation
 
@@ -45,6 +45,7 @@ private lateinit var decorview:View
 
     private fun settimersplashscreen()
     {
+
    //fullscreen
        decorview=window.decorView
         val uioption=View.SYSTEM_UI_FLAG_FULLSCREEN
