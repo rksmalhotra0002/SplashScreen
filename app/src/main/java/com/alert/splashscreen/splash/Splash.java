@@ -32,7 +32,8 @@ public class Splash extends AppCompatActivity {
         setContentView(view);
 
         setAnimation();
-        timerForSplashScreen();
+        setFullScreenCode();
+        setTimerForSplashScreen();
     }
 
     private void setAnimation() {
@@ -49,17 +50,18 @@ public class Splash extends AppCompatActivity {
 
     }
 
-    private void timerForSplashScreen() {
-
+    private void setFullScreenCode()
+    {
         try {
-
             //fullscreen
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
 
+    private void setTimerForSplashScreen() {
 
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {

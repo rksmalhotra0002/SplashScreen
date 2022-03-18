@@ -11,7 +11,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".walkthrough.Walkthrough"/>
 
-        <activity android:name=".splashkotlin.SplashActivity">
+        <activity android:name=".splashkotlin.SplashActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -17,8 +17,6 @@ class SplashActivity : AppCompatActivity() {
 
 private lateinit var activitySplashBinding: ActivitySplashBinding
 
-private lateinit var timer: Timer
-
 private lateinit var decorview:View
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +26,7 @@ private lateinit var decorview:View
         setContentView(decorview)
 
         setAnimation()
+        setFullScreenCodeForSplashScreen()
         setTimerSplashScreen()
     }
 
@@ -46,7 +45,7 @@ private lateinit var decorview:View
     }
 
 
-    private fun setTimerSplashScreen()
+    private fun setFullScreenCodeForSplashScreen()
     {
         try {
 
@@ -57,21 +56,27 @@ private lateinit var decorview:View
         {
             e.printStackTrace()
         }
+    }
 
-        timer= Timer()
-        timer.schedule(timerTask {
-            try {
+    private fun setTimerSplashScreen()
+    {
 
-                val intent=Intent(this@SplashActivity,Walkthrough::class.java)
-                startActivity(intent)
-                finish()
+        Timer().schedule(object : TimerTask() {
+            override fun run() {
 
-            }catch (e:Exception)
-            {
-                e.printStackTrace()
+                try {
+
+                    val intent=Intent(this@SplashActivity,Walkthrough::class.java)
+                    startActivity(intent)
+                    finish()
+
+                }catch (e:Exception)
+                {
+                    e.printStackTrace()
+                }
+
             }
-
-
         },3500)
+
     }
 }
