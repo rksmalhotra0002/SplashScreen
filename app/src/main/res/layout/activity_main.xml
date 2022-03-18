@@ -5,15 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
     tools:context=".splash.Splash">
 
 <ImageView
     android:id="@+id/iv_splash"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scaleY=".4"
     android:scaleX=".4"
+    android:scaleY=".4"
     android:contentDescription="@string/app_name"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"

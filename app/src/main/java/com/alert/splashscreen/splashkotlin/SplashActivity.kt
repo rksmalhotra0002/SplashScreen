@@ -1,14 +1,12 @@
 package com.alert.splashscreen.splashkotlin
-
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import butterknife.BindView
-import butterknife.ButterKnife
 import com.alert.splashscreen.R
 import com.alert.splashscreen.databinding.ActivitySplashBinding
 import com.alert.splashscreen.walkthrough.Walkthrough
@@ -30,33 +28,49 @@ private lateinit var decorview:View
         setContentView(decorview)
 
         setAnimation()
-
+        setTimerSplashScreen()
     }
 
     private fun setAnimation()
     {
-      //Animation
-       val animation = AnimationUtils.loadAnimation(this@SplashActivity, R.anim.downtoup)
-        activitySplashBinding.ivSplashkotlin.animation=animation
+        try{
 
-        settimersplashscreen()
+            //Animation
+            val animation = AnimationUtils.loadAnimation(this@SplashActivity, R.anim.downtoup)
+            activitySplashBinding.ivSplashkotlin.animation=animation
 
+        }catch (e:Exception)
+        {
+            e.printStackTrace()
+        }
     }
 
-    private fun settimersplashscreen()
-    {
 
-   //fullscreen
-       decorview=window.decorView
-        val uioption=View.SYSTEM_UI_FLAG_FULLSCREEN
-        decorview.systemUiVisibility=uioption
+    private fun setTimerSplashScreen()
+    {
+        try {
+
+            //fullscreen
+            window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
+        }catch (e:Exception)
+        {
+            e.printStackTrace()
+        }
 
         timer= Timer()
         timer.schedule(timerTask {
+            try {
 
-            val intent=Intent(this@SplashActivity,Walkthrough::class.java)
-            startActivity(intent)
-            finish()
+                val intent=Intent(this@SplashActivity,Walkthrough::class.java)
+                startActivity(intent)
+                finish()
+
+            }catch (e:Exception)
+            {
+                e.printStackTrace()
+            }
+
 
         },3500)
     }
